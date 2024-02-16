@@ -1,8 +1,10 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Book = ({book}) => {
     return (
-        <div className="overflow-hidden relative transition duration-200 transform hover:-translate-y-2">
+      <Link to= {`/book/${book.isbn13}`}>
+       <div className="overflow-hidden relative transition duration-200 transform hover:-translate-y-2">
         {" "}
         <img
           src={book.image}
@@ -14,9 +16,10 @@ const Book = ({book}) => {
           <br />
           <p>{book.subtitle.substring(0, 45)}</p>
           <br />
-          <p>Price: {book.price}</p>
+          <p className='mt-auto'>Price: {book.price}</p>
         </div>
       </div>
+      </Link>
     );
 };
 
